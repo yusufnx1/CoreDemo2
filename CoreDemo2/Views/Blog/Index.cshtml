@@ -1,0 +1,39 @@
+﻿@model List<EntityLayer.Concrete.Blog>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/UserLayout.cshtml";
+}
+@foreach (var x in Model)
+{
+    <div class="col-lg-4 card">
+        <a href="/Blog/BlogReadAll/@x.BlogId">
+            <img src="@x.BlogImage" class="card-img-top img-fluid" alt="">
+        </a>
+        <div class="card-body">
+            <ul class="blog-icons my-4">
+                <li>
+                    <a href="#">
+                        <i class="far fa-calendar-alt"></i> @x.BlogCreateDate.ToString("dd-MM-yyyy")
+                    </a>
+                </li>
+                <li class="mx-2">
+                    <a href="#">
+                        <i class="far fa-comment"></i> 21
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-eye"></i> @x.Category.CategoryName
+                    </a>
+                </li>
+
+            </ul>
+            <h5 class="card-title">
+                <a href="/Blog/BlogReadAll/@x.BlogId">@x.BlogTitle</a>
+            </h5>
+            <p class="card-text mb-3">@x.BlogContent.Substring(0,x.BlogContent.Substring(1,120).LastIndexOf(" "))</p>
+            <a href="/Blog/BlogReadAll/@x.BlogId" class="btn btn-primary read-m">Daha Fazlası</a>
+        </div>
+    </div>
+}

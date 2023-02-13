@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewData["Title"] = "BlogListExcel";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h1>BlogListExcel</h1>
+<br />
+@*<button class="btn btn-info" onclick="DowlandExcelBlogList()">Excel Listesini İndir</button>*@
+<a href="/Admin/Blog/ExpertStaticBlogList" class="btn btn-info">Excel Listesini İndir</a>
+
+<script>
+
+    function DowlandExcelBlogList() {
+        Window.open("/Admin/Blog/ExpertStaticBlogList");
+    }
+
+</script>
+

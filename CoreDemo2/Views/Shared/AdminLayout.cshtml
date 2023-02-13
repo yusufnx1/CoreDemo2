@@ -1,0 +1,26 @@
+﻿@{
+    Layout = null;
+}
+
+
+
+@await Html.PartialAsync("~/Views/Admin/AdminHeadPartial.cshtml")
+
+<div id="wrapper">
+
+    @await Html.PartialAsync("~/Views/Admin/AdminNavbarPartial.cshtml")
+
+    <div id="page-wrapper" class="gray-bg">
+
+        @await Html.PartialAsync("~/Views/Admin/AdminHeaderPartial.cshtml")
+
+        <div class="wrapper wrapper-content animated fadeInRight">
+
+            @RenderBody()
+
+        </div>
+
+        @await Html.PartialAsync("~/Views/Admin/AdminFooterPartial.cshtml")
+
+    </div>
+</div>
